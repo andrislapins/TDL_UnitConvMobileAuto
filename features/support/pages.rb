@@ -5,5 +5,7 @@ class Pages
     @keyboard = Keyboard.new(driver)
     @side_menu = SideMenu.new(driver)
     @header_section = HeaderSection.new(driver)
+    @numbers_screen = NumbersScreen.new(driver)
+    @clothing_screen = ClothingScreen.new(driver)
   end
 end
