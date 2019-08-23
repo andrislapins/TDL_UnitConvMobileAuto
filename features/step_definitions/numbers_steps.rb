@@ -6,7 +6,7 @@ And(/^I have selected "(.*)" as the conversion type$/) do |type|
   @pages.numbers_screen.conversion_type type
 end
 
-And(/^I enter "(.*)" on the keyboard$/) do |number|
+When(/^I enter "(.*)" on the keyboard$/) do |number|
   @pages.keyboard.input_number number
 end
 
