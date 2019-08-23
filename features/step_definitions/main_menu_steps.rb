@@ -20,5 +20,6 @@ end
 
 Given(/^I am in the "(.*)" screen$/) do |screen_name|
   @pages.header_section.invoke_side_menu
+  sleep 1
   @pages.side_menu.select_category(screen_name)
 end

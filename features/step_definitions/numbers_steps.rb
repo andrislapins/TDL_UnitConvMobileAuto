@@ -1,4 +1,4 @@
-Given(/^I have selected "(.*)" as base numbers$/) do |type|
+Given(/^I have selected "(.*)" as base type$/) do |type|
   @pages.numbers_screen.select_base_type type
 end
 
@@ -7,6 +7,8 @@ And(/^I have selected "(.*)" as the conversion type$/) do |type|
 end
 
 When(/^I enter "(.*)" on the keyboard$/) do |number|
+  sleep 1
+  @pages.keyboard.clear_input_field
   @pages.keyboard.input_number number
 end
 
@@ -15,6 +17,6 @@ And(/^I see "(.*)" in the conversion section$/) do |number|
 end
 
 And(/^I have "(.*)" type as base and "(.*)" type as the converter$/) do |base_type, conversion_type|
-  step "I have selected \"#{base_type}\" as base numbers"
+  step "I have selected \"#{base_type}\" as base type"
   step "I have selected \"#{conversion_type}\" as the conversion type"
 end

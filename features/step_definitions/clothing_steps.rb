@@ -23,5 +23,4 @@ end
 
 And(/^I see "(.*)" as the first converted value$/) do |first_converted_value|
   expect(@pages.clothing_screen.conversion_section_text).to eql first_converted_value
-  puts "Done"
 end

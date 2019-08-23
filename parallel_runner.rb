@@ -1,5 +1,6 @@
 require 'concurrent'
 
+`pkill -f appium`
 # @threads = []
 # @threads << Thread.new {
 #   device_name = ""

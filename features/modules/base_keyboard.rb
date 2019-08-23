@@ -8,4 +8,7 @@ class BaseKeyboard
     end
   end
 
+  def clear_input_field
+    clear_button_element.click
+  end
 end

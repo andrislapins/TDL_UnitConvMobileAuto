@@ -5,7 +5,12 @@ class BaseSideMenu
     until side_menu_sections_texts.include? name
       last_category = side_menu_sections_texts.last
       MOBILE.swipe('down')
-      raise('category not found') if last_category == side_menu_sections_texts.last
+      break if last_category == side_menu_sections_texts.last
+    end
+    until side_menu_sections_texts.include? name
+      first_category = side_menu_sections_texts.first
+      MOBILE.swipe('up')
+      raise('category not found') if first_category == side_menu_sections_texts.first
     end
   end
 
@@ -30,5 +35,4 @@ class BaseSideMenu
   def invoke_side_menu_by_swipe
     MOBILE.swipe('right')
   end
-
 end

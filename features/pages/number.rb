@@ -22,7 +22,10 @@ class NumbersScreen < BaseNumbersScreen
   end
 
   def conversion_section_element
-    @driver.find_element(id: 'target_value')
+    if @driver.find_element(id: 'target_value') == ''
+      @driver.find_element(id: 'target_value_placeholder')
+    else
+      @driver.find_element(id: 'target_value')
+    end
   end
-
 end

@@ -1,14 +1,18 @@
 # contains all actions for Number elements
 class BaseNumbersScreen
-
   def find_category(name)
-      return if type_popup_element_texts.include? name
+    return if type_popup_element_texts.include? name
 
-      until type_popup_element_texts.include? name
-        last_category = type_popup_element_texts.last
-        MOBILE.swipe('down')
-        raise('type not found') if last_category == type_popup_element_texts.last
-      end
+    until type_popup_element_texts.include? name
+      last_category = type_popup_element_texts.last
+      MOBILE.swipe('down')
+      break if last_category == type_popup_element_texts.last
+    end
+    until type_popup_element_texts.include? name
+      first_category = type_popup_element_texts.first
+      MOBILE.swipe('up')
+      raise('category not found') if first_category == type_popup_element_texts.first
+    end
   end
 
   def selected_type_name(type)
@@ -59,7 +63,6 @@ class BaseNumbersScreen
   end
 
   def conversion_section_text
-      conversion_section_element.text
+    conversion_section_element.text
   end
-
 end
