@@ -12,4 +12,8 @@ class Keyboard < BaseKeyboard
   def keyboard_digit(digit)
     keyboard.find_element(xpath: "//android.widget.Button[@text='#{digit}']")
   end
+
+  def clear_button_element
+    keyboard.find_elements(class: 'android.widget.Button').last
+  end
 end

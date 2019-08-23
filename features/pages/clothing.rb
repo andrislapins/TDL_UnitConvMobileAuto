@@ -1,5 +1,5 @@
 require './features/modules/base_clothing'
-
+# contains number screen elments to check
 class ClothingScreen < BaseClothingScreen
   def initialize(driver)
     @driver = driver
